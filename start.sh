@@ -1,12 +1,14 @@
 #!/bin/bash
 
-if [ -f .env ]; then
-    export $(cat .env | xargs)
+SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
+
+if [ -f "$SCRIPT_DIR/.env" ]; then
+    export $(cat "$SCRIPT_DIR/.env" | xargs)
 fi
 
 echo "Sending wake up signal to your device..."
 
-sudo etherwake $TARGET_MAC
+#sudo etherwake $TARGET_MAC
 
 echo "Signal sent. Waiting for the device to be online..."
 
