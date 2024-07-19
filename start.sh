@@ -8,7 +8,7 @@ fi
 
 echo "Sending wake up signal to your device..."
 
-#sudo etherwake $TARGET_MAC
+sudo etherwake $TARGET_MAC
 
 echo "Signal sent. Waiting for the device to be online..."
 
